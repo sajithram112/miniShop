@@ -1,0 +1,30 @@
+.footer {
+    padding: 25px 50px;
+}
+.footer .footer-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+}
+.footer .footer-container .footer-dividend {
+    display: flex;
+    justify-content: space-between;
+}
+.footer .footer-container .footer-dividend .links-container {
+    display: flex;
+    gap: 50px;
+    font-size: 16px;
+    align-items: center;
+    font-weight: 600;
+}
+.footer .footer-container .footer-divider-line{
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+.footer .footer-container .footer-divider {
+    display: flex;
+    justify-content: center;
+}
