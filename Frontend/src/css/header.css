@@ -1,0 +1,39 @@
+.header {
+  height: auto;
+  width: 100%;
+  padding: 25px 0px;
+}
+
+.header .header-container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.header .header-container .links-container {
+    display: flex;
+    gap: 50px;
+    font-size: 16px;
+    align-items: center;
+    font-weight: 600;
+}
+
+.language-container {
+ position: relative;
+}
+.language-container img {
+    height: 33px;
+    width: 56px;
+}
+.language-option {
+    position: absolute;
+    top: 35px;
+    padding: 11px;
+    background-color: white;
+}
+.logo_container img {
+    height: 32px;
+    width: 56px;
+}
