@@ -11,7 +11,42 @@
   justify-content: space-evenly;
   align-items: center;
 }
+.header .header-container.mob-view{
+  width: auto;
+  justify-content: space-between;
+  padding: 0px 25px;
+}
 
+.header-container .menu-holder {
+  position: relative;
+}
+
+.header-container .menu-holder .links-container{
+ position: absolute;
+ top: 30;
+ left: 5px;
+ border-radius: 5px;
+ background-color: white;
+ padding: 20px;
+ display: flex;
+ flex-direction: column;
+ align-items: start !important;
+ gap: 10px !important;
+ box-shadow: 0px 0px 5px 1px gray;
+ color: black;
+ width: max-content;
+ font-weight: 500 !important;
+}
+
+.header-container .menu-holder .links-container div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header-container .menu-holder .links-container div:hover{
+  background-color: gray;
+  opacity: 0.6;
+}
 .header .header-container .links-container {
     display: flex;
     gap: 50px;

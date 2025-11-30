@@ -1,0 +1,319 @@
+* {
+    box-sizing: border-box; 
+   --sidebar-width: calc(25% - 0.5vw);
+}
+
+.dashboard-layout {
+  min-height: 100vh;
+  background: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.main-header {
+  height: 70px;
+  background: #0066cc;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.menu-btn:hover { background: rgba(255,255,255,0.1); }
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.user-company {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.lang-btn {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dashboard-body {
+  display: flex;
+  margin-top: 70px;
+  height: auto;
+}
+
+.dashboard-body .closed .main-dash{
+    width: 100%;
+}
+.sidebar.open {
+  display: block;
+  width: var(--sidebar-width);
+  background: white;
+  border-right: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+.sidebar{
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .sidebar{
+        display: none;
+    }
+    .sidebar.open {
+        position: absolute;
+        display: block;
+        z-index: 10;
+        height: calc(100% - 70px);
+        width: 50%;
+        overflow: auto;
+    }
+}
+/* @media (max-width: 500px) {
+  .sidebar.open{
+    height: 100%;
+  }     
+} */
+@media (max-width: 450px) {
+  .sidebar.open{
+    width: 75%;
+  }  
+}
+.sidebar-menu {
+  padding: 16px 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 20px;
+  color: #444;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.menu-item:hover {
+  background: #f0f7ff;
+  color: #0066cc;
+}
+
+.menu-item.active {
+  background: #e6f0ff;
+  color: #0066cc;
+  border-left: 4px solid #0066cc;
+  font-weight: 600;
+}
+
+.menu-item.danger {
+  color: #d32f2f;
+}
+
+.menu-item.danger:hover {
+  background: #ffebee;
+}
+
+.main-dash{
+    width: calc(100% - var(--sidebar-width));
+    padding: 30px;
+}
+.main-dash.full{
+  width: 100%;
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.search-bars {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  min-width: 0;
+  width: 100%; 
+  max-width: 700px;
+}
+
+.search-input {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.search-input input {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px 0 44px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+}
+
+.search-input svg {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary, .btn-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: white;
+  color: green;
+}
+
+.btn-secondary {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.btn-toggle {
+  background: #fff;
+  color: #444;
+  border: 1px solid #ddd;
+}
+
+.table-container {
+  background: white;
+  border-radius: 12px;
+  /* allow horizontal scrolling when the table is wider than the viewport */
+  overflow: auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  /* make the table able to extend wider than the container and trigger horizontal scroll */
+  min-width: 1000px;
+}
+
+.products-table th {
+  background: #f8f9fa;
+  padding: 10px;
+  text-align: left;
+  font-weight: 600;
+  color: #444;
+  font-size: 14px;
+  /* keep header cells from wrapping and truncating if needed */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.products-table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  color: black;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.products-table td div {
+    border: 1px solid #4a4a4a;
+    padding: 5px 10px;
+    border-radius: 9999px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: fit-content;
+}
+
+@media (max-width: 991px) {
+  /* .table-container { padding: 12px; } */
+  .products-table { min-width: 900px; }
+}
+
+@media (max-width: 768px) {
+  .products-table th:nth-child(3),
+  .products-table th:nth-child(5),
+  .products-table th:nth-child(6),
+  .products-table td:nth-child(3),
+  .products-table td:nth-child(5),
+  .products-table td:nth-child(6) {
+    display: none;
+  }
+
+  .products-table { min-width: 550px; }
+}
+
+/* very small screens: allow multi-line for the main text columns to improve readability */
+@media (max-width: 420px) {
+  .products-table td:nth-child(2),
+  .products-table td:nth-child(7) {
+    white-space: normal;
+    max-width: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .main-dash {
+    width: 100%;
+    margin-left: 0;
+  }
+  .dash-header {
+    flex-direction: column;
+  }
+}
