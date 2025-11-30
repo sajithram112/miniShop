@@ -1,23 +1,40 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { useTranslation } from 'react-i18next'
 import Header from './components/Header'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import Login from './components/Login'
 import LoginFooter from './components/LoginFooter'
+import MainHeader from './components/MainHeader'
+import HomeDashboard from './pages/HomeDashboard'
 
 function App() {
-  const [count, setCount] = useState(0)
   const {t} = useTranslation()
-
+  const navigate = useNavigate()
+  const location = useLocation()
+  useEffect(() => {
+    const logged = JSON.parse(localStorage.getItem('logged'))
+    if (logged) navigate('/home')
+    else navigate('/login')
+    // navigate('/login')
+  }, [])
   return (
     <div className='app'>
-    <div className='backgroundImage'></div>
-    <Header/>
-    <Routes>
-      <Route path='/login' element={<Login/>}/>
-    </Routes>
-    <LoginFooter/>
+    {location.pathname === '/login'
+    ? <div className='backgroundImage'></div>
+    : <div></div>}
+    <div className='main-container'>
+      {location.pathname === '/login'
+      ? <Header/>
+      : null}
+      <Routes>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/home' element= {<HomeDashboard />} />
+      </Routes>
+      {location.pathname === '/login'
+       ? <LoginFooter/>
+       : <></> }
+    </div>
     </div>
   )
 }

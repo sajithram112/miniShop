@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     margin-top: 25px;
+    padding: 20px;
 }
 .login-main-container .login-container {
     width: 450px;
@@ -11,9 +12,14 @@
     background-color: white;
     border-radius: 35px;
 }
+@media (max-width: 767px) {
+    .login-main-container .login-container {
+        padding: 25px;
+    }
+}
 .login-container .login-head {
     color: red;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 600;
     display: flex;
     justify-content: center;

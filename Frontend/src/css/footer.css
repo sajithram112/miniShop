@@ -1,5 +1,5 @@
 .footer {
-    padding: 25px 50px;
+    padding: 25px 100px;
 }
 .footer .footer-container{
     display: flex;
@@ -12,6 +12,7 @@
 .footer .footer-container .footer-dividend {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .footer .footer-container .footer-dividend .links-container {
     display: flex;
@@ -27,4 +28,15 @@
 .footer .footer-container .footer-divider {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+}
+@media (max-width: 991px) {
+    .footer {
+        padding: 25px !important;
+    }
+}
+@media (max-width: 567px) {
+    .footer-dividend .links-container{
+        gap: 15px !important;
+    }
 }
