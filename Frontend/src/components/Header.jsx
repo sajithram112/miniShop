@@ -4,10 +4,13 @@ import en from '../assets/en.png'
 import sv from '../assets/sv.png'
 import { Menu, Home, ShoppingCart, Users, Info, Phone } from 'lucide-react'
 import '../css/header.css'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+import i18n from '../helper/i18n'
 
 const Header = () => {
   const [language, setLanguage] = useState(null)
+  const { t } = useTranslation()
   const [langSetting, setLangSettings] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [width, setWidth] = useState(window.innerWidth)
@@ -68,11 +71,15 @@ const Header = () => {
   }, [])
 
   useEffect(() => {
-    if (language) localStorage.setItem('i18nextLng', language)
+    if (language) {
+      localStorage.setItem('i18nextLng', language)
+      i18n.changeLanguage(language)
+    }
   }, [language])
 
   const languageSet = (lang) => {
     setLanguage(lang)
+
     setLangSettings(false)
   }
 
@@ -89,12 +96,12 @@ const Header = () => {
               <img src={diamond} alt="logo" height="50px" />
             </div>
 
-            <div className="links-container">
-              <div onClick={() => navigate('/home')}>Home</div>
-              <div>Order</div>
-              <div>Our Customer</div>
-              <div>About Us</div>
-              <div>Contact Us</div>
+              <div className="links-container">
+              <div onClick={() => navigate('/home')}>{t('menu_home')}</div>
+              <div>{t('menu_order')}</div>
+              <div>{t('menu_our_customers')}</div>
+              <div>{t('menu_about_us')}</div>
+              <div>{t('menu_contact_us')}</div>
 
               <div className="language-container">
                 <div onClick={() => setLangSettings(!langSetting)} ref={languageContainerRef}>
@@ -123,11 +130,11 @@ const Header = () => {
 
               {mobileMenuOpen && (
                 <div ref={mobileMenuRef} className="links-container mobile-menu">
-                  <div onClick={() => navto('/home')}><Home size={16} /> Home</div>
-                  <div onClick={() => setMobileMenuOpen(false)}><ShoppingCart size={16} /> Order</div>
-                  <div onClick={() => setMobileMenuOpen(false)}><Users size={16} /> Our Customer</div>
-                  <div onClick={() => setMobileMenuOpen(false)}><Info size={16} /> About Us</div>
-                  <div onClick={() => setMobileMenuOpen(false)}><Phone size={16} /> Contact Us</div>
+                  <div onClick={() => navto('/home')}><Home size={16} /> {t('menu_home')}</div>
+                  <div onClick={() => setMobileMenuOpen(false)}><ShoppingCart size={16} /> {t('menu_order')}</div>
+                  <div onClick={() => setMobileMenuOpen(false)}><Users size={16} /> {t('menu_our_customers')}</div>
+                  <div onClick={() => setMobileMenuOpen(false)}><Info size={16} /> {t('menu_about_us')}</div>
+                  <div onClick={() => setMobileMenuOpen(false)}><Phone size={16} /> {t('menu_contact_us')}</div>
                 </div>
               )}
             </div>

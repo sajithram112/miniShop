@@ -6,7 +6,6 @@ import '../css/dash.css'
 
 const HomeDashboard = () => {
     const [sidebarOpen, setSidebarOpen] = useState(null)
-    // const [windowWidth, setWindowWidth] = useState(window.innerWidth)
     const windowWidth = useRef(window.innerWidth)
     useEffect(() => {
         setSidebarOpen(window.innerWidth > 991)

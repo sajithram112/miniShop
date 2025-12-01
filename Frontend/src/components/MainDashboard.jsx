@@ -1,25 +1,27 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { Search, Plus, Printer, ToggleLeft } from 'lucide-react'
 
 const MainDashboard = () => {
+  const { t } = useTranslation()
   return (
     <main className="main-dash">
       <div className="dash-header">
         <div className="search-bars">
           <div className="search-input">
             <Search size={18} />
-            <input type="text" placeholder="Search Article No..." />
+            <input type="text" placeholder={t('search_article_no')} />
           </div>
           <div className="search-input">
             <Search size={18} />
-            <input type="text" placeholder="Search Product..." />
+            <input type="text" placeholder={t('search_product')} />
           </div>
         </div>
 
         <div className="action-buttons">
-          <button className="btn-primary"><Plus size={18} /> New Product</button>
-          <button className="btn-secondary"><Printer size={18} /> Print List</button>
-          <button className="btn-toggle"><ToggleLeft size={18} /> Advanced mode</button>
+          <button className="btn-primary"><Plus size={18} /> {t('button_new_product')}</button>
+          <button className="btn-secondary"><Printer size={18} /> {t('button_print_list')}</button>
+          <button className="btn-toggle"><ToggleLeft size={18} /> {t('button_advanced_mode')}</button>
         </div>
       </div>
 
@@ -27,13 +29,13 @@ const MainDashboard = () => {
         <table className="products-table">
           <thead>
             <tr>
-              <th>Article No.</th>
-              <th>Product/Service</th>
-              <th>In Price</th>
-              <th>Price</th>
-              <th>Unit</th>
-              <th>In Stock</th>
-              <th>Description</th>
+              <th>{t('table_header_article_no')}</th>
+              <th>{t('table_header_product_service')}</th>
+              <th>{t('table_header_in_price')}</th>
+              <th>{t('table_header_price')}</th>
+              <th>{t('table_header_unit')}</th>
+              <th>{t('table_header_in_stock')}</th>
+              <th>{t('table_header_description')}</th>
             </tr>
           </thead>
           <tbody>
