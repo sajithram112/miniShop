@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import '../css/login.css'
 import { useNavigate } from 'react-router-dom'
+import { login } from '../../service/userService'
+import { toaster } from '../helper/commonhelper'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -9,6 +12,7 @@ const Login = () => {
   const [passwordError, setPasswordError] = useState('')
 
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   const validateEmail = () => {
     if (!email) setEmailError('Email is required')
@@ -16,19 +20,29 @@ const Login = () => {
     else setEmailError('')
   }
 
-//   const validatePassword = () => {
-//     if (!password) setPasswordError('Password is required')
-//     else if (password.length < 6) setPasswordError('Password must be at least 6 characters')
-//     else setPasswordError('')
-//   }
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     validateEmail()
     // validatePassword()
     if(!emailError){
-        localStorage.setItem('logged', true)
+      const params = { email, password }
+      const result = await login(params)
+      if(result.status) {
+        toaster('Log in success', 'success')
         navigate('/home')
+        localStorage.setItem('logged', true)
+      } else {
+        switch(result.type) {
+          case 'error':
+            toaster('Something went wrong, try again later', 'error')
+            break
+          case 'user_not_found':
+            toaster('invalid credentials', 'error')
+            break
+          default:
+            toaster('Something went wrong, try again later', 'error')
+        }
+      }
     }
   }
 
@@ -36,13 +50,13 @@ const Login = () => {
     <div className='login-main-container'>
       <div className='login-container'>
         <div className='login-head'>
-          Login
+          {t('login_page')}
         </div>
         <div className='login-body'>
           <div>
-            <label>Email</label>
+            <label>{t('email_placeholder')}</label>
             <input 
-              placeholder='Email' 
+              placeholder={t('email_placeholder')} 
               type='text' 
               autoComplete='random-mail'
               value={email}
@@ -52,9 +66,9 @@ const Login = () => {
             {emailError && <span className='error'>{emailError}</span>}
           </div>
           <div>
-            <label>Password</label>
+            <label>{t('password_placeholder')}</label>
             <input 
-              placeholder='Password' 
+              placeholder={t('password_placeholder')} 
               type='password' 
               autoComplete='random-pass'
               value={password}
@@ -63,11 +77,11 @@ const Login = () => {
             />
             {passwordError && <span className='error'>{passwordError}</span>}
           </div>
-          <div className='centerer'><button onClick={handleSubmit}>Login</button></div>
+          <div className='centerer'><button onClick={handleSubmit}>{t('login_button')}</button></div>
         </div>
         <div className='login-footer'>
-          <div>Register</div>
-          <div>Forgot Password</div>
+          <div>{t('register_link')}</div>
+          <div>{t('forgotten_password_link')}</div>
         </div>
       </div>
     </div>
