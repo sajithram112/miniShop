@@ -9,6 +9,7 @@ import HomeDashboard from './pages/HomeDashboard'
 import { language } from '../service/userService'
 import i18n from './helper/i18n'
 import { ToastContainer } from 'react-toastify'
+import TermsCondition from './components/TermsCondition'
 
 function App() {
   const { t } = useTranslation()
@@ -20,7 +21,7 @@ function App() {
     const logged = JSON.parse(localStorage.getItem('logged'))
     initFields()
     if (logged) navigate('/home')
-    else navigate('/login')
+    else if (!['/terms-condition'].includes(location.pathname)) navigate('/login')
   }, [])
 
   const initFields = async () => {
@@ -47,18 +48,19 @@ function App() {
 
   return (
     <div className='app'>
-      {location.pathname === '/login'
+      {['/login', '/terms-condition'].includes(location.pathname)
         ? <div className='backgroundImage'></div>
         : <div></div>}
       <div className='main-container'>
-        {location.pathname === '/login'
+        {['/login', '/terms-condition'].includes(location.pathname)
           ? <Header />
           : null}
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/home' element={<HomeDashboard />} />
+          <Route path = '/terms-condition' element={<TermsCondition/>} />
         </Routes>
-        {location.pathname === '/login'
+        {['/login', '/terms-condition'].includes(location.pathname)
           ? <LoginFooter />
           : <></>}
       </div>

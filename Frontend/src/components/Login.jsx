@@ -20,12 +20,6 @@ const Login = () => {
     else setEmailError('')
   }
 
-//   const validatePassword = () => {
-//     if (!password) setPasswordError('Password is required')
-//     else if (password.length < 6) setPasswordError('Password must be at least 6 characters')
-//     else setPasswordError('')
-//   }
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     validateEmail()

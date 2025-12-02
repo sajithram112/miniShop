@@ -17,7 +17,7 @@ const LoginFooter = () => {
             </div>
             <div className='footer-divider-line'></div>
             <div className='footer-divider'>
-                © Lättfaktura, CRO no. 638537, 2025. {t('footer_rights')}
+                © Lättfaktura, CRO no. 638537, 2025. {t('footer_rights')}, <a href='/terms-condition' target='blank'>Terms and condition</a>
             </div>
         </div>
     </div>
