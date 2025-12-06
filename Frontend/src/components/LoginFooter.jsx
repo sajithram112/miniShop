@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import '../css/footer.css'
+import { Link } from 'react-router-dom'
 
 const LoginFooter = () => {
     const { t } = useTranslation()
@@ -17,7 +18,7 @@ const LoginFooter = () => {
             </div>
             <div className='footer-divider-line'></div>
             <div className='footer-divider'>
-                © Lättfaktura, CRO no. 638537, 2025. {t('footer_rights')}, <a href='/terms-condition' target='blank'>Terms and condition</a>
+                © Lättfaktura, CRO no. 638537, 2025. {t('footer_rights')}, <Link to="/terms-condition">Terms and condition</Link>
             </div>
         </div>
     </div>

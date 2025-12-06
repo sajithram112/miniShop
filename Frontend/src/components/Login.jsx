@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import '../css/login.css'
 import { useNavigate } from 'react-router-dom'
 import { login } from '../../service/userService'
-import { toaster } from '../helper/commonhelper'
+import { toaster } from '../helper/commonHelper'
 
 const Login = () => {
   const [email, setEmail] = useState('')

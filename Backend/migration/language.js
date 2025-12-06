@@ -40,44 +40,166 @@ const language_data = [
   { key_name: 'table_header_in_stock', en: 'In Stock', sv: 'I lager' },
   { key_name: 'table_header_description', en: 'Description', sv: 'Beskrivning' },
   { key_name: 'invoice_now_button', en: 'Invoice Now', sv: 'Fakturera Nu' },
-  { key_name: 'terms_intro', en: 'By clicking Invoice Now, you choose to register according to the information that you have typed in and the text on the registration page and the terms here, and you at the same time accept the terms here.', sv: 'BY clicking Invoice Now, you choose to register according to the information that you have typed in and the text on the registration page and the terms here, and you at the same time accept the terms here.' },
-  { key_name: 'free_trial_period', en: 'You can use the program FOR FREE for 14 days.', sv: 'You can use the program FOR FREE for 14 days.' },
-  { key_name: 'support_info', en: '123 Fakturera is so easy and self-explanatory that the chance that you will need support is minimal, but if you should need support, we are here for you, with our office manned for the most part of the day.', sv: '123 Fakturera is so easy and self-explanatory that the chance that you will need support is minimal, but if you should need support, we are here for you, with our office manned for the most part of the day.' },
-  { key_name: 'subscription_price', en: 'After the trial period, the subscription continues and costs SEK 99 excluding VAT per month, which is billed annually.', sv: 'After the trial period, the subscription continues and costs SEK 99 excluding VAT per month, which is billed annually.' },
-  { key_name: 'cancel_trial_how', en: 'If you do not want to keep the program, just cancel the trial period by giving notice before 14 days from registration.', sv: 'If you do not want to keep the program, just cancel the trial period by giving notice before 14 days from registration.' },
-  { key_name: 'cancel_free', en: 'You have of course the right to terminate the use of the program without any costs, by giving us notice per email before 14 days from registration, that you do not want to continue with the program, and you then of course do not pay anything.', sv: 'You have of course the right to terminate the use of the program without any costs, by giving us notice per email before 14 days from registration, that you do not want to continue with the program, and you then of course do not pay anything.' },
-  { key_name: 'no_cancellation_after_14', en: 'If we do not receive such a notice from you before 14 days from registration, then the order, for natural reasons, cannot be changed.', sv: 'If we do not receive such a notice from you before 14 days from registration, then the order, for natural reasons, cannot be changed.' },
-  { key_name: 'registration_definition', en: 'With registration it is meant the date and time when you did choose to press the button Invoice Now.', sv: 'With registration it is meant the date and time when you did choose to press the button Invoice Now.' },
-  { key_name: 'billing_cycle', en: 'Billing is for one year at a time.', sv: 'Billing is for one year at a time.' },
-  { key_name: 'price_details', en: 'The price for 123 Fakturera (offer price SEK 99 per month / ordinary price SEK 159 per month) is for the annual fee Start for one year\'s use of the program.', sv: 'The price for 123 Fakturera (offer price SEK 99 per month / ordinary price SEK 159 per month) is for the annual fee Start for one year\'s use of the program.' },
-  { key_name: 'offer_period_calc', en: 'When using the offer price of SEK 99, the one-year period is calculated from registration.', sv: '(When using the offer price of SEK 99, the one-year period is calculated from registration.)' },
-  { key_name: 'vat_note', en: 'All prices are excluding VAT.', sv: 'All prices are excluding. VAT.' },
-  { key_name: 'additional_modules', en: 'Offer, Inventory Control, Member Invoicing, Multiuser version and English printout are (or can be) additional modules that can be ordered later.', sv: 'Offer, Inventory Control, Member Invoicing, Multiuser version and English printout are (or can be) additional modules that can be ordered later.' },
-  { key_name: 'invoicing_company', en: 'Intermediation, as well as invoicing, may take place from K-Soft Sverige AB, Box 2826, 187 28 Täby. In the future, we may choose to cooperate with another company for e.g. intermediation and invoicing. However, the customer relationship is with us.', sv: 'Intermediation, as well as invoicing, may take place from K-Soft Sverige AB, Box 2826, 187 28 Täby. In the future, we may choose to cooperate with another company for e.g. intermediation and invoicing. However, the customer relationship is with us.' },
-  { key_name: 'payment_to_invoice_sender', en: 'The payment is made to the company from which the invoice comes.', sv: 'The payment is made to the company from which the invoice comes.' },
-  { key_name: 'continuous_subscription', en: 'The annual fee is on a continuous basis, but if you do not wish to continue using the program, all you have to do is give notice thirty days before the start of the next one-year period.', sv: 'The annual fee is on a continuous basis, but if you do not wish to continue using the program, all you have to do is give notice thirty days before the start of the next one-year period.' },
-  { key_name: 'introductory_offer', en: 'The introductory offer (SEK 99 per month) is for the annual fee Start for the first year.', sv: 'The introductory offer ( SEK 99 per month) is for the annual fee Start for the first year.' },
-  { key_name: 'price_after_first_year', en: 'After the first year, the ordinary price is billed, which is currently, for annual fee Start, SEK 159 per month, for annual fee Remote control, SEK 300 per month and for annual fee Pro, SEK 333 per month.', sv: 'After the first year, the ordinary price is billed, which is currently, for annual fee Start, one hundred and fifty-nine kroner per month, for annual fee Remote control, three hundred kroner per month and for annual fee Pro, three hundred and thirty-three kroner per month.' },
-  { key_name: 'default_after_year', en: 'After one year, the annual Remote Control fee is invoiced as standard, but you can choose Start or Pro by giving notice at any time before the due date.', sv: 'After one year, the annual Remote Control fee is invoiced as standard, but you can choose Start or Pro by giving notice at any time before the due date.' },
-  { key_name: 'payment_acceptance', en: 'If you choose to keep the program by not notifying us by email within 14 days of registration that you do not wish to continue with the program, you accept that you will pay the invoice for your order.', sv: 'If you choose to keep the program by not notifying us by email within 14 days of registration that you do not wish to continue with the program, you accept that you will pay the invoice for your order.' },
-  { key_name: 'no_cancel_late_payment', en: 'Failure to pay the invoice or late payment does not give the right to cancel the order.', sv: 'Failure to pay the invoice or late payment does not give the right to cancel the order.' },
-  { key_name: 'logo_help', en: 'We are happy to help you with logo at a cost price.', sv: 'We are happy to help you with logo at a cost price.' },
-  { key_name: 'license_legal', en: 'License for the use of 123 Fakturera is of course sold in accordance with applicable laws.', sv: 'License for the use of 123 Fakturera is of course sold in accordance with applicable laws.' },
-  { key_name: 'data_storage_reason', en: 'In order to be able to help you more easily and provide you with support, as well as to comply with the laws, we, for natural reasons, have to store your information.', sv: 'In order to be able to help you more easily and provide you with support, as well as to comply with the laws, we, for natural reasons, have to store your information.' },
-  { key_name: 'private_person_cancellation', en: 'If you order as a private person, you have the right to cancel as stated by law.', sv: 'If you order as a private person, you have the right to cancel as stated by law.' },
-  { key_name: 'data_usage', en: 'Your information is stored so that we can help you, etc. We will use it to be able to help you if you need help, follow the laws regarding bookkeeping, etc.', sv: 'Your information is stored so that we can help you, etc. We will use it to be able to help you if you need help, follow the laws regarding bookkeeping, etc.' },
-  { key_name: 'marketing_permission', en: 'When there are upgrades and the like, we may send you offers and the like about our products and services by email or the like. You may be contacted by email, post and telephone.', sv: 'When there are upgrades and the like, we may send you offers and the like about our products and services by email or the like. You may be contacted by email, post and telephone.' },
-  { key_name: 'opt_out_marketing', en: 'If you don\'t want to be contacted, just send us an email about it.', sv: 'If you don\'t want to be contacted, just send us an email about it.' },
-  { key_name: 'unsubscribe_upgrades', en: 'You can at any time ask not to be sent information about upgrades by email, letter or the like, and we will of course not do that.', sv: 'You can at any time ask not to be sent information about upgrades by email, letter or the like, and we will of course not do that.' },
-  { key_name: 'data_processing_permission', en: 'For natural reasons, we have to store, process and move your data. Your information is stored until further notice.', sv: 'For natural reasons, we have to store, process and move your data. Your information is stored until further notice.' },
-  { key_name: 'broad_data_permission', en: 'You give us permission to store, process and move your data, as well as to send you offers and the like by email, letter and the like, and tell others that you are customer. Due to the way it works with software, permission also needs to be given to other parties (current and future companies and persons related to the software, source code, website, etc.).', sv: 'You give us permission to store, process and move your data, as well as to send you offers and the like by email, letter and the like, and tell others that you are customer. Due to the way it works with software, permission also needs to be given to other parties...' },
-  { key_name: 'gdpr_rights', en: 'You of course have the right to request access to, change and deletion of the information we hold about you. You also have the right to request restriction of data processing, and to object to data processing and the right to data portability. You have the right to complain to the supervisory authority.', sv: 'You of course have the right to request access to, change and deletion of the information we hold about you. You also have the right to request restriction of data processing, and to object to data processing and the right to data portability. You have the right to complain to the supervisory authority.' },
-  { key_name: 'governing_law', en: 'The laws of Ireland are the applicable laws.', sv: 'The laws of Ireland are the applicable laws.' },
-  { key_name: 'voluntary_order', en: 'Placing an order is of course completely voluntary.', sv: 'Placing an order is of course completely voluntary.' },
-  { key_name: 'no_profiling', en: 'Of course, we do not use any automated profiling or decisions.', sv: 'Of course, we do not use any automated profiling or decisions.' },
-  { key_name: 'contact_info', en: 'If you wish to contact us, please use the information on this website.', sv: 'If you wish to contact us, please use the information on this website.' },
-  { key_name: 'registration_timestamp', en: 'Date and time of admission are entered automatically in our registers.', sv: '(Date and time of admission are entered automatically in our registers.)' },
-  { key_name: 'closing_message', en: 'Our experience is that our customers are very satisfied with the way we work and hope and believe that this will also be your experience. Have a great day!', sv: 'Our experience is that our customers are very satisfied with the way we work and hope and believe that this will also be your experience. Have a great day!' }
+ {
+    key_name: 'terms_intro',
+    en: 'By clicking "Fakturera Nu" you confirm that you register with the information you have entered and accept the terms and conditions stated on this registration page and here.',
+    sv: 'GENOM ATT klicka på Fakturera Nu så väljer ni att registrera enligt den information som ni har lagt in och texten på registrerings sidan och villkoren här, och accepterar samtidigt villkoren här.'
+  },
+  {
+    key_name: 'terms_trial_period',
+    en: 'You can use the program completely FREE for 14 days.',
+    sv: 'Ni kan använda programmet GRATIS i 14 dagar.'
+  },
+  {
+    key_name: 'terms_support',
+    en: '123 Fakturera is so simple and self-explanatory that the chance of needing support is minimal, but if you do, we are here for you with our office staffed most of the day and night.',
+    sv: '123 Fakturera är så lätt och självförklarande att chansen för att du kommer behöva support är minimal, men om du skulle behöva support, så är vi här för dig, med vårt kontor bemannat större delen av dygnet.'
+  },
+  {
+    key_name: 'terms_pricing_and_cancellation',
+    en: 'After the trial period, the subscription continues and costs 99 SEK excl. VAT per month, invoiced annually. If you do not wish to keep the program, simply notify us by email within 14 days of registration and you will of course not be charged anything.',
+    sv: 'Efter provperioden så fortsätter abonnemanget och kostar 99 kronor exkl. moms per månad, som faktureras årligen. Om du inte vill behålla programmet, så är det bara att avbryta provperioden genom att ge oss besked inom 14 dagar från registrering. Ni har självklart rätt att avsluta användningen av programmet utan kostnad, genom att ge oss besked per email inom 14 dagar från registrering, att ni inte vill fortsätta med programmet, och betalar då självklart inte heller något.'
+  },
+  {
+    key_name: 'terms_no_cancel_after_14',
+    en: 'If we do not receive such notice within 14 days of registration, the order cannot be changed.',
+    sv: 'Om vi inte inom 14 dagar från registrering mottar sådant besked från er, så kan ordern av naturliga orsaker inte ändras.'
+  },
+  {
+    key_name: 'terms_registration_time',
+    en: 'Registration means the exact date and time when you clicked the "Fakturera Nu" button.',
+    sv: 'Med registrering menas det datum och klockslag då ni valde att trycka på knappen Fakturera Nu.'
+  },
+  {
+    key_name: 'terms_billing_cycle',
+    en: 'Invoicing is done one year at a time.',
+    sv: 'Fakturering sker för ett år i taget.'
+  },
+  {
+    key_name: 'terms_special_price',
+    en: 'The price for 123 Fakturera (special price 99 SEK / regular price 159 SEK per month) applies to the annual Start plan for one year of use.',
+    sv: 'Priset för 123 Fakturera (specialpris kr 99:- / ord. pris kr 159:- per månad) är för årsavgift Start för ett års användning av programmet.'
+  },
+  {
+    key_name: 'terms_special_period',
+    en: 'When using the special price of 99 SEK, the one-year period starts from the registration date.',
+    sv: '(Vid användning av specialpriset kr 99:- så räknas ett års perioden från registrering.)'
+  },
+  {
+    key_name: 'terms_vat',
+    en: 'All prices are exclusive of VAT.',
+    sv: 'Alla priser är exkl. moms.'
+  },
+  {
+    key_name: 'terms_addons',
+    en: 'Quotations, Inventory management, Membership invoicing, Multi-user version and English printout are (or may be) add-on modules that can be ordered later.',
+    sv: 'Offert, Lagerstyrning, Medlemsfakturering, Fleranvändarversion och Engelsk utskrift är (eller kan vara) tilläggsmoduler som kan beställas senare.'
+  },
+  {
+    key_name: 'terms_billing_company',
+    en: 'Distribution and invoicing may be carried out by K-Soft Sverige AB, Box 2826, 187 28 Täby, or another partner in the future. The customer relationship remains with us.',
+    sv: 'Förmedling, samt fakturering kan komma att ske från K-Soft Sverige AB, Box 2826, 187 28 Täby. Vi kan i framtiden välja att samarbeta med annat företag för t.ex. förmedling och fakturering. Kundförhållandet är dock självklart med oss. Betalningen görs till det företag som fakturan kommer från.'
+  },
+  {
+    key_name: 'terms_renewal',
+    en: 'The annual fee is recurring. If you no longer wish to use the program, just give us 30 days notice before the next annual period begins.',
+    sv: 'Årsavgiften är löpande men om ni inte vill fortsätta att använda programmet, så är det bara att ge besked trettio dagar innan ingången av nästföljande ett års period.'
+  },
+  {
+    key_name: 'terms_price_after_first_year',
+    en: 'The introductory price (99 SEK/month) applies only to the first year. After that, regular prices apply: Start plan 159 SEK/month (Start), 300 SEK/month (Fjärrstyrning), 333 SEK/month (Pro). After one year the Fjärrstyrning plan is billed by default, but you may switch plan anytime before the due date.',
+    sv: 'Introduktionspriset (kr 99:- per månad) är för årsavgift Start för det första året. Efter det första året faktureras ord. pris vilket för närvarande är, för årsavgift Start, ett hundra och femtinio kronor per månad, för årsavgift Fjärrstyrning, tre hundra kronor per månad och för årsavgift Pro, tre hundra och trettiotre kronor per månad. Efter ett år faktureras årsavgift Fjärrstyrning som standard men ni kan välja Start eller Pro genom att ge besked när som helst innan förfallodagen.'
+  },
+  {
+    key_name: 'terms_payment_obligation',
+    en: 'By not notifying us by email within 14 days that you do not wish to continue, you accept payment of the invoice. Non-payment or late payment does not entitle you to cancel the order.',
+    sv: 'Om ni väljer att behålla programmet genom att inte ge oss besked per email innan 14 dagar från registrering, om att ni inte vill fortsätta med programmet, så accepterar ni att ni kommer att betala fakturan för er beställning. Att inte betala fakturan eller sen betalning ger inte rätt till att annullera beställningen.'
+  },
+  {
+    key_name: 'terms_logo_help',
+    en: 'We are happy to help create your logo at cost price.',
+    sv: 'Vi hjälper gärna att fixa logo för er till självkostpris.'
+  },
+  {
+    key_name: 'terms_license',
+    en: 'License for use of 123 Fakturera is of course sold in accordance with applicable laws.',
+    sv: 'Licens för användning av 123 Fakturera säljs självklart enligt gällande lagar.'
+  },
+  {
+    key_name: 'terms_data_storage_intro',
+    en: 'In order to provide support and comply with the law, we must store your information.',
+    sv: 'För att lättare kunna hjälpa er och ge er support samt för att följa lagarna, måste vi av naturliga orsaker spara er information.'
+  },
+  {
+    key_name: 'terms_gdpr_intro',
+    en: 'In connection with storing information, the law requires us to provide you with the following information:',
+    sv: 'I samband med lagring av information så kräver lagen att vi ger er följande information:'
+  },
+  {
+    key_name: 'terms_right_of_withdrawal',
+    en: 'If you order as a private individual, you have the right of withdrawal provided by law.',
+    sv: 'Om ni beställer som privatperson så har ni den ångerrätt som lagen fastställer.'
+  },
+  {
+    key_name: 'terms_data_usage',
+    en: 'Your information is stored so we can assist you, comply with accounting laws, etc. We may send you offers about upgrades and contact you by email, post or phone.',
+    sv: 'Er information sparas så att vi kan hjälpa er m.m. Vi kommer använda den för att kunna hjälpa er om ni behöver hjälp, följa lagarna ang. bokföring m.m. När det kommer uppgraderingar och liknande, kan vi komma att skicka er erbjudande och liknande om våra produkter och tjänster per email eller liknande. Ni kan också komma att bli kontaktad per email, post och telefon.'
+  },
+  {
+    key_name: 'terms_opt_out',
+    en: 'You can opt out of marketing at any time by sending us an email.',
+    sv: 'Om ni inte vill bli kontaktad, bara skicka oss en email ang. det. Ni kan när som helst begära att inte få tillsänt information om uppgraderingar per email, brev eller liknande och vi kommer då självklart inte att göra det.'
+  },
+  {
+    key_name: 'terms_data_processing_consent',
+    en: 'You consent to us storing, processing and transferring your data, sending you offers, and informing others that you are a customer. Due to the nature of software, this consent also extends to current and future owners of the software, source code, website, and related companies.',
+    sv: 'Av naturliga orsaker måste vi spara, databehandla och flytta era data. Er information sparas tills vidare. Ni ger oss medgivande till att lagra, databehandla och flytta era data, samt att skicka er erbjudanden... [full text as in original]'
+  },
+  {
+    key_name: 'terms_your_rights',
+    en: 'You have the right to access, rectification, erasure, restriction, objection, data portability and to lodge a complaint with a supervisory authority. Governing law is Irish law.',
+    sv: 'Ni har självklart rätt att begära tillgång till, rättelse eller radering av informationen... Det är lagarna i Irland som är gällande lagar.'
+  },
+  {
+    key_name: 'terms_voluntary',
+    en: 'Placing an order is of course completely voluntary. We do not use automated profiling or automated decision-making.',
+    sv: 'Det är självklart helt frivilligt att lägga er order. Vi använder självklart inte någon automatiserad profilering och inte heller något automatiserat beslutsfattande.'
+  },
+  {
+    key_name: 'terms_contact',
+    en: 'If you wish to contact us, please use the contact information on this website.',
+    sv: 'Om ni vill kontakta oss, vänligen använd då informationen på denna hemsidan.'
+  },
+  {
+    key_name: 'terms_final_call',
+    en: 'Click "Fakturera Nu" to register according to the information you have entered and these terms. (Date and time are automatically recorded.)',
+    sv: 'Klicka på Fakturera Nu för att registrera i enlighet med den information som ni har lagt in och villkoren här. (Datum och tidpunkt för inläggningen läggs in automatiskt i våra register.)'
+  },
+  {
+    key_name: 'terms_closing',
+    en: 'Our experience is that our customers are very satisfied with the way we work, and we hope and believe you will be too. Have a wonderful day!',
+    sv: 'Vår erfarenhet är att våra kunder är mycket nöjda med sättet vi arbetar på och vi hoppas och tror att det också kommer att bli er upplevelse. Ha en trevlig dag!'
+  },
+  {
+    key_name: 'terms_modal_title',
+    en: 'Terms and Conditions',
+    sv: 'Villkor'
+  },
+  {
+    key_name: 'terms_modal_close',
+    en: 'Close and go back',
+    sv: 'Stäng och gå tillbaka'
+  },
+  {
+    "key_name": "loading",
+    "en": "Loading",
+    "sv": "Laddar"
+  },
+  {
+    "key_name": "no_more_data",
+    "en": "No more data",
+    "sv": "Ingen mer data"
+  }
 ]
 
 module.exports = language_data

@@ -105,7 +105,7 @@ const Header = () => {
 
               <div className="language-container">
                 <div onClick={() => setLangSettings(!langSetting)} ref={languageContainerRef}>
-                  {language === 'en' ? <img src={en} alt="EN" height="50px" /> : <img src={sv} alt="SV" height="50px" />}
+                  {String(language).includes('en') ? <img src={en} alt="EN" height="50px" /> : <img src={sv} alt="SV" height="50px" />}
                 </div>
 
                 {langSetting && (
@@ -141,7 +141,7 @@ const Header = () => {
 
             <div className="language-container" style={{ marginLeft: 'auto' }}>
               <div onClick={() => setLangSettings(!langSetting)} ref={languageContainerRef}>
-                {language === 'en' ? <img src={en} alt="EN" height="40px" /> : <img src={sv} alt="SV" height="40px" />}
+                {String(language).includes('en') ? <img src={en} alt="EN" height="40px" /> : <img src={sv} alt="SV" height="40px" />}
               </div>
 
               {langSetting && (

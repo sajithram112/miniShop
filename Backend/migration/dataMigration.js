@@ -7,14 +7,13 @@ const insert_product_details = async () => {
     let placeholders = ''
     const values = []
     migration_data.products.forEach((x, i) => {
-        placeholders += `${i === 0 ? '' : ','}($${i*7 + 1}, $${i*7 + 2}, $${i*7 + 3}, $${i*7 + 4}, $${i*7 + 5}, $${i*7 + 6}, $${i*7 + 7})`
+        placeholders += `${i === 0 ? '' : ','}($${i*6 + 1}, $${i*6 + 2}, $${i*6 + 3}, $${i*6 + 4}, $${i*6 + 5}, $${i*6 + 6})`
         values.push(...Object.values(x))
     })
     const query = `
         INSERT INTO product_item
-        (article_no, title, in_price, price, unit, in_stock, description)
+        (title, in_price, price, unit, in_stock, description)
         VALUES ${placeholders}
-        ON CONFLICT (article_no) DO NOTHING
     `
     try {
         await db.query(query, values)

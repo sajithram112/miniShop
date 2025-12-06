@@ -3,10 +3,14 @@ import MainHeader from '../components/MainHeader'
 import SideDashboard from '../components/SideDashboard'
 import MainDashboard from '../components/MainDashboard'
 import '../css/dash.css'
+import { useNavigate } from 'react-router-dom'
 
 const HomeDashboard = () => {
     const [sidebarOpen, setSidebarOpen] = useState(null)
     const windowWidth = useRef(window.innerWidth)
+    const navigate = useNavigate()
+
+    if(!localStorage.getItem('logged')) navigate('/login')
     useEffect(() => {
         setSidebarOpen(window.innerWidth > 991)
         addMenuClass(window.innerWidth > 991)
