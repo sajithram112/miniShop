@@ -21,27 +21,27 @@ const create_user_table = async () => {
         console.log('Unable to create user table', Err)
     }
 }
-
 const create_service_table = async () => {
-    try {
-        await db.query(`
-            CREATE TABLE IF NOT EXISTS product_item (
-                id SERIAL PRIMARY KEY,
-                article_no BIGINT UNIQUE NOT NULL,
-                title VARCHAR(255) NOT NULL,
-                in_price NUMERIC(15,2) NOT NULL,
-                price NUMERIC(15,2) NOT NULL,
-                unit VARCHAR(100) NOT NULL,
-                in_stock INTEGER NOT NULL,
-                description TEXT,
-                created_at TIMESTAMP DEFAULT NOW()
-            )
-        `)  
-        console.log('Product service table creawted successfully')
-    } catch (Err) {
-        console.log('unable to create service table')
-    }
+  try {
+    await db.query(`
+      CREATE TABLE IF NOT EXISTS product_item (
+        id SERIAL PRIMARY KEY,
+        article_no BIGSERIAL UNIQUE NOT NULL,
+        title VARCHAR(255) NOT NULL,
+        in_price NUMERIC(15,2) NOT NULL,
+        price NUMERIC(15,2) NOT NULL,
+        unit VARCHAR(100) NOT NULL,
+        in_stock INTEGER NOT NULL,
+        description TEXT,
+        created_at TIMESTAMP DEFAULT NOW()
+      )
+    `)
+    console.log('Product service table created successfully')
+  } catch (err) {
+    console.log('unable to create service table', err)
+  }
 }
+
 
 const create_language_table = async () => {
     try {

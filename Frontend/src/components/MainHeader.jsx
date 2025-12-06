@@ -73,7 +73,7 @@ const MainHeader = ({ onMenuToggle = () => {} }) => {
                         style={{ cursor: 'pointer' }}
                     >
                         <img
-                            src={language === 'en' ? en : sv}
+                            src={String(language).includes('en') ? en : sv}
                             alt={t('language_label')}
                             height="32"
                         />

@@ -30,6 +30,10 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+.footer .footer-container .footer-divider a{
+    color: white;
+    text-decoration: underline;
+}
 @media (max-width: 991px) {
     .footer {
         padding: 25px !important;

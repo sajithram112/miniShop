@@ -1,17 +1,23 @@
+// db.js
+require('dotenv').config();
 const { Pool } = require('pg');
 
-require('dotenv').config(); 
-
 const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_DATABASE,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
+  // connectionString: process.env.PG_URI,
+  // ssl: {
+  //   rejectUnauthorized: false  // Required for Neon
+  // }
+  user: PGUSER,
+  PGHOST: PGHOST,
+  database: PGDATABASE,
+  password: PGPASSWORD,
+  port: PGPORT
 });
 
-pool.connect()
-  .then(() => console.log('PostgreSQL connected successfully'))
-  .catch(err => console.error('Connection error', err));
+pool.on('error', (err, client) => {
+  console.error('Unexpected error on idle PostgreSQL client (Neon killed it)', err.message);
+});
 
-module.exports.db = pool
+console.log('PostgreSQL pool created – ready for queries');
+
+module.exports.db = pool;

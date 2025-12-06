@@ -53,3 +53,81 @@ module.exports.get_product_service = async (req, res) => {
         });
     }
 };
+
+module.exports.add_product_service = async (req, res) => {
+  try {
+    const { title, in_price, price, unit, in_stock, description } = req.body
+
+    if (!title || !in_price || !price || !unit || !in_stock) {
+      return res.json({
+        status: false,
+        message: 'Required fields are missing'
+      })
+    }
+
+    const query = `
+      INSERT INTO product_item (
+        title, in_price, price, unit, in_stock, description
+      )
+      VALUES ($1, $2, $3, $4, $5, $6)
+      RETURNING *
+    `
+
+    const result = await db.query(query, [
+      title, in_price, price, unit, in_stock, description
+    ])
+
+    return res.json({
+      status: true,
+      message: 'product added successfully',
+      data: result.rows[0]
+    })
+  } catch (err) {
+    console.log('Unable to add product', err)
+
+    return res.json({
+      status: false,
+      message: 'Failed to add product'
+    })
+  }
+}
+
+module.exports.edit_product_service = async (req, res) => {
+  try {
+    const { id } = req.params
+    const { field, value } = req.body
+    const allowedFields = ['title', 'in_price', 'price', 'unit', 'in_stock', 'description'];
+    if (!field || !allowedFields.includes(field)) {
+      return res.json({
+        status: false,
+        message: 'Invalid field'
+      })
+    }
+
+    const query = `
+      UPDATE product_item
+      SET ${field} = $1
+      WHERE id = $2
+      RETURNING *
+    `;
+
+    const result = await db.query(query, [value, id])
+    if (result.rowCount === 0) {
+      return res.json({
+        status: false,
+        message: 'Product not found'
+      })
+    }
+    return res.json({
+      status: true,
+      message: 'Updated successfully',
+    })
+
+  } catch (err) {
+    console.log('Update failed:', err)
+    return res.json({
+      status: false,
+      message: 'Something went wrong'
+    });
+  }
+};
