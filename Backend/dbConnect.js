@@ -7,11 +7,11 @@ const pool = new Pool({
   // ssl: {
   //   rejectUnauthorized: false  // Required for Neon
   // }
-  user: PGUSER,
-  PGHOST: PGHOST,
-  database: PGDATABASE,
-  password: PGPASSWORD,
-  port: PGPORT
+  user: process.env.PGUSER || 'myuser',
+  host: process.env.PGHOST || 'localhost',
+  database: process.env.PGDATABASE || 'mydb',
+  password: process.env.PGPASSWORD || 'mypassword',
+  port: process.env.PGPORT || 5432
 });
 
 pool.on('error', (err, client) => {
